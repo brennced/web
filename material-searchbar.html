@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Material Search Bar</title>
+		<link rel="stylesheet" href="http://brennced.github.io/CLI/ghg.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+			body {
+				background-color: #808080;
+			}
+			input[type="search"]#mainsearch {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				-ms-appearance: none;
+				appearance: none;
+				
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+				
+				background-color: white;
+				font-family: 'Segoe UI', 'Arial', sans-serif;
+				font-size: 14px;
+				border: 0px none;
+				border-radius: 3px;
+				box-shadow: 0px 2px 2px rgba(0,0,0,0.33);
+				padding: 3px;
+				font-weight: 600;
+				color: #3F3F3F;
+				width: 52px;
+			}
+			input[type="search"]#mainsearch:focus {
+				width: 230px;
+			}
+			
+			input[type="search"]#mainsearch::-webkit-input-placeholder {
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+				color: #909090;
+				font-style: italic;
+			}
+			input[type="search"]#mainsearch::-moz-placeholder {
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+				color: #909090;
+				font-style: italic;
+			}
+			input[type="search"]#mainsearch:-ms-input-placeholder {
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+				color: #909090;
+				font-style: italic;
+			}
+			input[type="search"]#mainsearch:input-placeholder {
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+				color: #909090;
+				font-style: italic;
+			}
+			
+			input[type="search"]#mainsearch:focus::-webkit-input-placeholder {
+				color: white;
+			}
+			input[type="search"]#mainsearch:focus::-moz-placeholder {
+				color: white;
+			}
+			input[type="search"]#mainsearch:focus:-ms-input-placeholder {
+				color: white;
+			}
+			input[type="search"]#mainsearch:focus:input-placeholder {
+				color: white;
+			}
+			pre, code {
+				font-family: 'Consolas', 'Courier New', monospace;
+				font-size: 10pt;
+			}
+			h3 {
+				color: white;
+				font-family: sans-serif;
+			}
+		</style>
+		<script>
+			function hidecode() {
+				document.getElementById('sourcecode-html').style.display = 'none';
+				document.getElementById('sourcecode-css').style.display = 'none';
+				document.getElementById('h-html').style.display = 'none';
+				document.getElementById('h-css').style.display = 'none';
+				document.getElementById('hcsc').innerHTML = 'Show code';
+				document.getElementById('hcsc').onclick = function(){showcode()};
+			}
+			function showcode() {
+				document.getElementById('sourcecode-html').style.display = '';
+				document.getElementById('sourcecode-css').style.display = '';
+				document.getElementById('h-html').style.display = '';
+				document.getElementById('h-css').style.display = '';
+				document.getElementById('hcsc').innerHTML = 'Hide code';
+				document.getElementById('hcsc').onclick = function(){hidecode()};
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Live demo:</h3>
+		<input type="search" id="mainsearch" placeholder="Search...">
+		<h3 id="h-html">HTML</h3>
+		<pre id="sourcecode-html"><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;input type="search" id="mainsearch" placeholder="Search..."&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+		<h3 id="h-css">CSS:</h3>
+		<pre id="sourcecode-css"><code class="css">
+input[type="search"]#mainsearch {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	
+	background-color: white;
+	font-family: 'Segoe UI', 'Arial', sans-serif;
+	font-size: 14px;
+	border: 0px none;
+	border-radius: 3px;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.33);
+	padding: 3px;
+	font-weight: 600;
+	color: #3F3F3F;
+	width: 52px;
+}
+input[type="search"]#mainsearch:focus {
+	width: 230px;
+}
+
+input[type="search"]#mainsearch::-webkit-input-placeholder {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	color: #909090;
+	font-style: italic;
+}
+input[type="search"]#mainsearch::-moz-placeholder {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	color: #909090;
+	font-style: italic;
+}
+input[type="search"]#mainsearch:-ms-input-placeholder {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	color: #909090;
+	font-style: italic;
+}
+input[type="search"]#mainsearch:input-placeholder {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	color: #909090;
+	font-style: italic;
+}
+
+input[type="search"]#mainsearch:focus::-webkit-input-placeholder {
+	color: white;
+}
+input[type="search"]#mainsearch:focus::-moz-placeholder {
+	color: white;
+}
+input[type="search"]#mainsearch:focus:-ms-input-placeholder {
+	color: white;
+}
+input[type="search"]#mainsearch:focus:input-placeholder {
+	color: white;
+}
+</code></pre>
+	<br /><br />
+	<a style="color:white;font-family:sans-serif" href="#" onclick="hidecode(); return false" id="hcsc">Hide code</a>
+	</body>
+</html>
